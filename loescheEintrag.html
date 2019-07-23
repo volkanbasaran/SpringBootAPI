@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>Eintrag entfernen</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h1>Entferne einen Eintrag:</h1>
+	<form th:action="@{/HTML/loescheEintrag}" th:object="${GaesteForm}"
+		method="POST" th:method="DELETE">
+		Email: <input type="text" th:field="*{email}" /> <br />
+		<input type="submit" value="Lösche" />
+	</form>
+	<br />
+	<!-- Check if removeMessagee is not null and not empty -->
+	<div th:if="${removeMessage}" th:utext="${removeMessage}"
+		style="color: red; font-style: italic;">...</div>
+</body>
+</html>

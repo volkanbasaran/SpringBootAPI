@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>Eintrag ändern</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h1>Ändere einen Eintrag:</h1>
+	<form th:action="@{/HTML/aendereEintrag}" th:object="${GaesteForm}"
+		method="POST" th:method="PUT">
+		Email: <input type="text" th:field="*{email}" /> <br />
+		<input type="submit" value="Ändern" />
+	</form>
+	<br />
+	<!-- Check if removeMessagee is not null and not empty -->
+	<div th:if="${removeMessage}" th:utext="${removeMessage}"
+		style="color: red; font-style: italic;">...</div>
+</body>
+</html>

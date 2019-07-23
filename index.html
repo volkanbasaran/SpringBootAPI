@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Mert & Volkan</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<header>
+		<h1>Welcooooome :)</h1>
+		<h2 th:utext="${message}">..!..</h2>
+	</header>
+	<nav>
+		<form method='GET' th:action="@{/HTML/api}">
+			<input type='submit' value='Wo bist du? Wie kalt wird es heute?'>
+		</form>
+		<p>
+			<a th:href="@{/HTML/gaesteliste}">Zeige alle Gäste</a>
+		</p>
+	</nav>
+
+	<button onclick="aufklapper()">Spoiler</button>
+
+	<div id="Spoiler">
+		<img src="Pics/Einstein.jpg" alt="Einstein">
+	</div>
+
+	<script>
+		function aufklapper() {
+			var a = document.getElementById("Spoiler");
+			if (a.style.display === "none") {
+				a.style.display = "block";
+			} else {
+				a.style.display = "none";
+			}
+		}
+	</script>
+	<br />
+	<br />
+	<footer>
+		<table>
+			<thead>
+
+				<tr>
+					<th rowspan="2">Name
+					</th>
+					<td>Volkan Basaran</td>
+					<td>Mert Akemlek</td>
+				</tr>
+
+			</thead>
+			<tbody>
+
+				<tr>
+					<th rowspan=2>E-Mail
+					</th>
+					<td>volkan.basaran@gmx.de</td>
+					<td rowspan=2>mert.akemlek@gmail.com</td>
+				</tr>
+
+				<tr>
+					<td>volkan-basaran@outlook.de</td>
+				</tr>
+
+				<tr>
+					<th>Matrikelnr.
+					</th>
+					<td>1235243</td>
+					<td>1216408</td>
+				</tr>
+
+				<tr>
+					<th>Universität
+					</th>
+					<td colspan=2>Frankfurt University of Applied Sciences</td>
+				</tr>
+
+			</tbody>
+		</table>
+		<p>© 2019 by Mert & Volkan</p>
+	</footer>
+</body>
+</html>

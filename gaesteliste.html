@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>Gästeliste</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h1>Tabelle aller Gäste</h1>
+	<a href="neuerEintrag">F&uuml;ge einen Eintrag hinzu</a>
+	<br />
+	<br />
+	<div>
+		<table>
+			<tr>
+				<th>Email</th>
+				<th>Vorname</th>
+				<th>Nachname</th>
+			</tr>
+			<tr th:each="gast : ${gaeste}">
+				<td th:utext="${gast.email}">...</td>
+				<td th:utext="${gast.vorname}">...</td>
+				<td th:utext="${gast.nachname}">...</td>
+			</tr>
+		</table>
+	</div>
+	<br />
+	<br />
+	<a href="loescheEintrag">L&ouml;sche einen Eintrag</a>
+	<br />
+	<br />
+	<form method='POST' th:action="@{/HTML/gaesteliste}">
+		<input type='submit' value='Erzeuge .csv Datei'>
+	</form>
+	<br />
+	<form method='GET' th:action="@{/}">
+		<input type='submit' value='Startseite'>
+	</form>
+</body>
+</html>

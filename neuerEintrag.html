@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>Eintrag hinzufügen</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h1>Erstelle einen Eintrag:</h1>
+	<form th:action="@{/HTML/neuerEintrag}" th:object="${GaesteForm}"
+		method="POST">
+		Email: <input id="eingabe" type="text" th:field="*{email}" /> <br />
+		Vorname: <input type="text" th:field="*{vorname}" /> <br />
+		Nachname: <input type="text" th:field="*{nachname}" /> <br /> <input
+			type="submit" value="Hinzufügen" />
+	</form>
+	<br />
+	<!-- Check if errorMessage is not null and not empty -->
+	<div th:if="${errorMessage}" th:utext="${errorMessage}"
+		style="color: red; font-style: oblique;">...</div>
+</body>
+</html>

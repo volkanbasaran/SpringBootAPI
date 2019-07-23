@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>API</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<header>
+		<h1 id="geo">Geoinformationen und Wetterinformationen über
+			Frankfurt am Main</h1>
+	</header>
+	<nav>
+		<form method='GET' th:action="@{/}">
+			<input type='submit' value='Startseite'>
+		</form>
+	</nav>
+	<br>
+	<table>
+		<tr>
+			<th>Längengrad</th>
+			<th>Breitengrad</th>
+		</tr>
+		<td th:utext="${lon}"></td>
+		<td th:utext="${lat}"></td>
+	</table>
+
+	<br>
+	<br> Aktuelle Temperatur:
+	<h2 th:utext="${temp}"></h2>
+	°C
+	<br>
+	<br>
+
+	<table>
+		<tr>
+			<th>Aktuell min</th>
+			<th>Aktuell max</th>
+		</tr>
+		<td th:utext="${temp_min}"></td>
+		<td th:utext="${temp_max}"></td>
+	</table>
+	<script th:src="@{/JScript/jscript.js}"></script>
+</body>
+</html>
